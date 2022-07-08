@@ -21,7 +21,6 @@ function App() {
   const [taskValue, setTaskValue] = useState("");
   const [fetching, setFetching] = useState(true);
   const [taskList, setTaskList] = useState([]);
-  const [def, setDef] = useState(new Array(taskList.length).fill("dummy"));
   const taskReference = collection(db, "todo");
   const [firstLoad, setFirstLoad] = useState(true);
 
@@ -51,7 +50,7 @@ function App() {
 
     if (firstLoad) {
       getTasks();
-      setDef(new Array(taskList.length).fill("dummy"));
+      
       setFirstLoad(false);
     }
   }, []);
@@ -71,10 +70,7 @@ function App() {
     });
 
     if (taskValue != "") {
-      def.push("dummy");
-      setDef(def);
       setFetching(true);
-
       const toAdd = await addDoc(
         taskReference, {
         task: taskValue
@@ -82,6 +78,7 @@ function App() {
       );
 
       updateList();
+
       await delay(350);
       setFetching(false);
     }
@@ -100,10 +97,6 @@ function App() {
       draggable: false,
       pauseOnHover: false
     });
-    def.pop()
-    const dummy = def;
-    setDef(dummy);
-
     const toDeleteReference = doc(db, 'todo', e.target.value);
     setFetching(true);
     const toDelete = await deleteDoc(toDeleteReference);
@@ -132,7 +125,7 @@ function App() {
           rowRight={<button value="add" style={styles.addButtonStyle} onClick={Add}  >+</button>} />
 
         {fetching ?
-          (def.map((task) =>
+          (taskList.map((task) =>
             <Row
               rowLeft={<p style={styles.taskC}><CustomSkeleton /></p>}
               rowRight={<button style={styles.delButtonStyle} onClick={Del} >-</button>} />
