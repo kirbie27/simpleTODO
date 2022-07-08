@@ -3,9 +3,12 @@
   
 ## Application Screenshots
 
-<p align="center">
-<img src="todo/3.png" width="600" title="Base">
-</p>
+<kbd>
+  <p align="center">
+  <img src="todo/3.png" width="600" title="Base">
+  </p> 
+</kbd>
+
 
 <p align="center">
 <img src="todo/1.png" width="600" title="Base">
