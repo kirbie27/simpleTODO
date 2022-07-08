@@ -10,14 +10,21 @@ import CustomSkeleton from './skeleton.js';
 import { db } from './firebase.js';
 import { collection, doc, getDocs, addDoc, deleteDoc } from 'firebase/firestore';
 
+
+
 function App() {
-  const def = [1];
+
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
   const [taskValue, setTaskValue] = useState("");
   const [fetching, setFetching] = useState(true);
   const [taskList, setTaskList] = useState([]);
+  const [def, setDef] = useState(new Array(taskList.length).fill("dummy"));
   const taskReference = collection(db, "todo");
   const [firstLoad, setFirstLoad] = useState(true);
-  const [dataReference, setDataReference] = useState([]);
+
   const handleChange = async (e) => {
     const inputValue = e.target.value;
     setTaskValue(inputValue);
@@ -25,13 +32,12 @@ function App() {
 
   const updateList = async () => {
     const data = await getDocs(taskReference);
-    setDataReference(data);
     setTaskList(
       data.docs.map((d) => (
         { ...d.data(), id: d.id }
       ))
     );
-
+    
     console.log(taskList);
   }
   useEffect(() => {
@@ -39,11 +45,13 @@ function App() {
       setFetching(true);
       const data = await getDocs(taskReference);
       updateList();
+      await delay(350);
       setFetching(false);
     };
 
     if (firstLoad) {
       getTasks();
+      setDef(new Array(taskList.length).fill("dummy"));
       setFirstLoad(false);
     }
   }, []);
@@ -63,8 +71,10 @@ function App() {
     });
 
     if (taskValue != "") {
-
+      def.push("dummy");
+      setDef(def);
       setFetching(true);
+
       const toAdd = await addDoc(
         taskReference, {
         task: taskValue
@@ -72,6 +82,7 @@ function App() {
       );
 
       updateList();
+      await delay(350);
       setFetching(false);
     }
   };
@@ -89,11 +100,15 @@ function App() {
       draggable: false,
       pauseOnHover: false
     });
+    def.pop()
+    const dummy = def;
+    setDef(dummy);
 
     const toDeleteReference = doc(db, 'todo', e.target.value);
     setFetching(true);
     const toDelete = await deleteDoc(toDeleteReference);
     updateList();
+    await delay(350);
     setFetching(false);
 
   };
