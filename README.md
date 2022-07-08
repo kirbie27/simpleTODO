@@ -10,14 +10,20 @@
 </kbd>
 
 
-<p align="center">
-<img src="todo/1.png" width="600" title="Base">
-</p>
+<kbd>
+  <p align="center">
+  <img src="todo/1.png" width="600" title="Base">
+  </p>
+</kbd>
 
-<p align="center">
-<img src="todo/4.png" width="600" title="Base">
-</p>
+<kbd>
+  <p align="center">
+  <img src="todo/4.png" width="600" title="Base">
+  </p>
+</kbd>
 
-<p align="center">
-<img src="todo/5.png" width="300" title="Base">
-</p>
+<kbd>
+  <p align="center">
+  <img src="todo/5.png" width="300" title="Base">
+  </p>
+</kbd>
