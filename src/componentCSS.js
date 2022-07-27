@@ -13,7 +13,7 @@ export const taskInputStyle = {
     flex: "1",
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
     border: "none",
-    backgroundColor: "#03fc88",
+    backgroundColor: "var(--header-pink)",
     margin: "0.5rem",
     fontWeight: "800",
     color: "white",

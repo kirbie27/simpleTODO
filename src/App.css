@@ -2,6 +2,66 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+:root {
+  /*Primary and Database */
+  --primary-base: #0C49E0;
+  --primary-very-dark: #001342;
+  --primary-dark:  #042A86;
+  --primary-light: #B3C9FF;
+  --primary-very-light: #E0E9FF;
+  --primary-ext-light: #F7F9FF;    
+
+  /* Secondary and Doc */
+  --secondary-base: #7B63CA;
+  --secondary-very-dark: #100045;
+  --secondary-dark:  #19006C;
+  --secondary-light: #D3C8F8;
+  --secondary-very-light:#EEE9FF;
+  --secondary-ext-light: #FAF9FF;  
+  /*Tertiary and Workflow */
+  --tertiary-base: #2BBAE0;
+  --tertiary-very-dark: #004051;
+  --tertiary-dark:  #297A8F;
+  --tertiary-light: #9DEAFF;
+  --tertiary-very-light: #E3F9FF;
+  --tertiary-ext-light: #F5FDFF;
+
+  /*Accent and MyTask */
+  --accent-base: #EF5667;
+  --accent-very-dark: #48040C;
+  --accent-dark: #9D3A45;
+  --accent-light: #FFA5AF;
+  --accent-very-light:#FFE2E6;
+  --accent-ext-light: #FFF7F7;
+
+  /*Text-Lines and Settings */
+  --text-lines-grey: #748094;
+  --text-lines-dark: #333333;
+  --text-lines-light-grey: #B9BFCA;
+  --text-lines-very-light-grey: #E8EAED;
+  --text-lines-off-white:#F9F9F9;
+  --text-lines-white: #FFFFFF;
+  --text-lines-black: #151515;
+
+  /*Alert*/
+  --alert-100: #E44040;
+  --alert-bg: #FFE2E6;
+
+  /*Warning*/
+  --warning-100: #F78C29;
+  --warning-bg: #FFE8D3;
+
+  /*Approved*/
+  --approved-100: #1DC186;
+  --approved-bg: #D8F2E9;
+
+  /*Header*/
+  --header-pink: #DB62CF;
+  --header-yellow: #EDBE1A;
+  --header-brown: #9D763A;
+  --header-dark-orange: #9C3800;
+}
+
 .App {
   text-align: center;
   display: flex;
