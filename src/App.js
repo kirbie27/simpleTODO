@@ -8,7 +8,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import CustomSkeleton from './skeleton.js';
 import { db } from './firebase.js';
-import { collection, doc, getDocs, addDoc, deleteDoc } from 'firebase/firestore';
+import { collection, doc, getDocs, addDoc, deleteDoc, query, orderBy} from 'firebase/firestore';
 
 
 
@@ -30,7 +30,7 @@ function App() {
   };
 
   const updateList = async () => {
-    const data = await getDocs(taskReference);
+    const data = await getDocs(query(taskReference, orderBy('number')));
     setTaskList(
       data.docs.map((d) => (
         { ...d.data(), id: d.id }
@@ -73,10 +73,12 @@ function App() {
       setFetching(true);
       const toAdd = await addDoc(
         taskReference, {
-        task: taskValue
+        task: taskValue,
+        number: (taskList.length + 1)
       }
       );
 
+      console.log(taskList.length + 1);
       updateList();
 
       await delay(350);
