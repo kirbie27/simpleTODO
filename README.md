@@ -30,13 +30,13 @@ https://simpletodo-9a156.web.app/
 ### Sample 4
 <kbd>
   <p align="center">
-  <img src="todo/4.png" width="300" title="Base4">
+  <img src="todo/4.png" width="600" title="Base4">
   </p>
 </kbd>
 
 ### Sample 5
 <kbd>
   <p align="center">
-  <img src="todo/5.png" width="300" title="Base5">
+  <img src="todo/5.png" width="600" title="Base5">
   </p>
 </kbd>
