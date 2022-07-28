@@ -13,7 +13,7 @@ export const taskInputStyle = {
     flex: "1",
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
     border: "none",
-    backgroundColor: "var(--header-pink)",
+    backgroundColor: "var(--approved-100)",
     margin: "0.5rem",
     fontWeight: "800",
     color: "white",
@@ -26,6 +26,30 @@ export const taskInputStyle = {
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
     border: "none",
     backgroundColor: "#fc3d03",
+    margin: "0.5rem",
+    fontWeight: "800",
+    color: "white",
+    fontSize: "2rem",
+    minWidth: "20%"
+  };
+
+  export const editButtonStyle = {
+    flex: "1",
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+    border: "none",
+    backgroundColor: "var(--text-lines-off-white)",
+    margin: "0.5rem",
+    fontWeight: "800",
+    color: "white",
+    fontSize: "2rem",
+    minWidth: "20%"
+  };
+
+  export const editingButtonStyle = {
+    flex: "1",
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+    border: "none",
+    backgroundColor: "var(--text-lines-light-grey)",
     margin: "0.5rem",
     fontWeight: "800",
     color: "white",
@@ -45,5 +69,7 @@ export const taskInputStyle = {
     maxWidth: "80%",
     textTransform: "uppercase",
     fontWeight: "800",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    outline: "none",
+    border: "none",
   };
